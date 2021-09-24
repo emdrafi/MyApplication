@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -17,13 +18,14 @@ class NewsAdapter(private val mList:List<NewsViewModel>,private val context:Cont
 
         return ViewHolder(view)
     }
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val ItemsViewModel = mList[position]
         holder.tvTitle.text=ItemsViewModel.title
         holder.tvDesc.text=ItemsViewModel.description
         if (ItemsViewModel.image !== null) {
 
-            Picasso.get().load(ItemsViewModel.image).into(holder.imageNews)
+            Picasso.get().load(ItemsViewModel.image).error(context.resources.getDrawable(R.drawable.ic_launcher_background)).into(holder.imageNews)
         }else{
             holder.imageNews.setImageResource(R.drawable.ic_launcher_background)
 
