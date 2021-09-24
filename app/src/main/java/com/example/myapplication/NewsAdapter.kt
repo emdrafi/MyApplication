@@ -1,15 +1,12 @@
 package com.example.myapplication
 
 import android.content.Context
-import android.icu.number.NumberFormatter.with
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.bumptech.glide.Glide.with
 import com.squareup.picasso.Picasso
 
 class NewsAdapter(private val mList:List<NewsViewModel>,private val context:Context):

@@ -1,4 +1,9 @@
 package com.example.myapplication
 
-data class NewsViewModel(val title:String,val description:String,val image:String) {
+import com.google.gson.annotations.Expose
+import com.google.gson.annotations.SerializedName
+
+data class NewsViewModel(@SerializedName("title") @Expose val title:String? = null,
+                         @SerializedName("description") @Expose  val description:String? = null,
+                         @SerializedName("imageHref") @Expose val image:String? = null) {
 }
